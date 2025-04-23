@@ -1,115 +1,182 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>So Hyeongseop | 포트폴리오</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
-    <script>
-        function showPage(id, clickedLink = null) {
-          const sections = document.querySelectorAll('.main-content section');
-          const links = document.querySelectorAll('.sidebar a');
-      
-          // 모든 섹션 숨기기
-          sections.forEach(section => section.classList.add('hidden'));
-      
-          // 클릭된 섹션 보여주기
-          document.getElementById(id).classList.remove('hidden');
-      
-          // 모든 링크에서 active 제거
-          links.forEach(link => link.classList.remove('active-link'));
-      
-          // 클릭된 링크에 강조
-          if (clickedLink) {
-            clickedLink.classList.add('active-link');
-          }
-        }
-    </script>
-
   <div class="sidebar">
-    <h4 onclick="showPage('about')">So Hyeongseop</h4>
-
-    <div class="nav-subtitle">서강대학교 캡스톤디자인</div>
-    <a href="#" onclick="showPage('isyou')">🧠 ISyou</a>
-
-    <div class="nav-subtitle">휴먼교육센터 서울</div>
-    <a href="#" class="nav-link" onclick="showPage('404error', this)">python을 활용한 빅데이터 분석</a>
-    <a href="#" onclick="showPage('chatbot')">🤖 AI 챗봇</a>
-    <a href="#" onclick="showPage('gantt')">📊 Gantt 일정툴</a>
-    <a href="#" onclick="showPage('web')">🕸 웹 크롤링</a>
+    <h2 class="sidebar-title" onclick="goHome()">So Hyeongseop's Portfolio</h2>
+  
+    <div class="sidebar-section">
+      <div class="sidebar-subtitle">서강대학교<br /> 캡스톤디자인</div>
+    </div>
+  
+    <div class="sidebar-section">
+      <a href="#save-time" class="sidebar-link">-Save time</a>
+      <a href="#isyou" class="sidebar-link">-ISyou</a>
+    </div>
+  
+    <div class="sidebar-section">
+      <div class="sidebar-subtitle">휴먼교육센터 서울</div>
+    </div>
+  
+    <div class="sidebar-section">
+      <a href="#matchday" class="sidebar-link">-JSP 기반 FE/BE</a>
+      <a href="#404error" class="sidebar-link">-Python 데이터 분석</a>
+    </div>
   </div>
 
   <div class="main-content">
-    <section id="about" class="visible">
-      <div class="intro">
-        <h2>👋 안녕하세요, 소형섭입니다.</h2>
-        <p>
-          저는 <strong>Python 기반 데이터 분석</strong>과 <strong>웹 개발</strong>을 통해 가치를 창출하는 개발자입니다.<br>
-          <code>Flask, Pandas, SQL, 머신러닝</code>을 활용한 프로젝트 경험을 바탕으로,<br>
-          복잡한 데이터 속에서 <strong>인사이트를 도출</strong>하는 데 강점을 가지고 있습니다.
-        </p>
+    <section id="about">
+      <h2>안녕하세요, 소형섭입니다.</h2>
+      <p>Python 기반 데이터 분석과 웹 개발로 인사이트를 창출하는 개발자입니다.</p>
+      <p>C언어에 능숙하고 MySQL 데이터베이스를 활용한 기본적인 DB 기술을 보유하고 있습니다.</p>
 
-        <h3>🔥 주요 프로젝트 하이라이트</h3>
-        <div class="hot-projects">
-          <a href="#" onclick="showPage('404error')" class="project-card">
-            <span>🚇 404ERROR 분석</span>
-            <small>ANOVA/ANCOVA 기반 교통·인구 분석 웹앱</small>
-          </a>
-          <a href="#" onclick="showPage('gantt')" class="project-card">
-            <span>📊 Gantt 일정툴</span>
-            <small>팀 협업을 위한 작업 일정 시각화 도구</small>
-          </a>
-          <a href="#" onclick="showPage('chatbot')" class="project-card">
-            <span>🤖 AI 챗봇</span>
-            <small>Flask 기반 LLM 대화 인터페이스</small>
-          </a>
-          <a href="#" onclick="showPage('web')" class="project-card">
-            <span>🌐 웹 크롤링 자동화</span>
-            <small>뉴스·블로그 데이터 수집 시스템</small>
-          </a>
+      <div class="dashboard">
+        <div>
+          <img src="profile.jpg" alt="프로필 사진" class="profile-img" />
+          <div>
+            <h3>개인 정보</h3>
+            <p><strong>이름:</strong> 소형섭</p>
+            <p><strong>이메일:</strong> shs1492@gmail.com</p>
+            <p><strong>연락처:</strong> 010-4416-5263</p>
+            <p><strong>주소:</strong> 서울특별시 영등포구 도신로 53길 10</p>
+          </div>
+        </div>
+
+        <div>
+          <h3>학력</h3>
+          <p>서강대학교 컴퓨터공학과 졸업 (2011~2019)</p>
+          <p>휴먼교육센터 KDT 과정 (2025.02~)</p>
+
+          <h3>경력</h3>
+          <p>수학학원 강사 (2017~2019)</p>
+          <p>마인즈랩 인턴 (2022.06~2022.09)</p>
+          <p>강사 및 과외 (2022~2023)</p>
+          <p>건설 현장 비계공 (2024)</p>
+
+          <h3>활동 및 자격증</h3>
+          <ul>
+            <li>서강 기우회 회장 (2016)</li>
+            <li>정보처리기사</li>
+            <li>SQLD</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>주요 프로젝트</h3>
+      <div class="project-card-container">
+        <div class="project-card">
+          <h4>ISyou</h4>
+          <p>앱 잠금 보안 애플리케이션 (Swift 기반)</p>
+        </div>
+        <div class="project-card">
+          <h4>Matchday</h4>
+          <p>온라인 보드게임 모임 플랫폼 (JSP 기반 웹사이트)</p>
+        </div>
+        <div class="project-card">
+          <h4>404ERROR</h4>
+          <p>공공데이터 기반 Python 데이터 분석 프로젝트</p>
+        </div>
+      </div>
+
+      <div class="bottom-info">
+        <div class="github">
+          <h4>GitHub</h4>
+          <a href="https://github.com/HyeongseopSo0914" target="_blank">github.com/HyeongseopSo0914</a>
+        </div>
+        <div class="skills">
+          <h4>보유 스킬 및 숙련도</h4>
+          <div class="skills-icons">
+            <div class="skill-item">
+              <img src="images_lan/C.svg" alt="C" />
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <img src="images_lan/CPP.svg" alt="C++" />
+              <div class="progress-bar">
+                <div class="progress" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <img src="images_lan/JavaScript.svg" alt="JavaScript" />
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <img src="images_lan/Python-Dark.svg" alt="Python" />
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <img src="images_lan/MySQL-Light.svg" alt="MySQL" />
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="isyou" class="hidden">
-      <div class="project-title">🧠 ISyou</div>
-      <p>서강대학교 캡스톤디자인 프로젝트. 사용자 감정 기반 인터랙티브 웹 개발.</p>
-    </section>
-
-    <section id="404error" class="hidden">
-      <div class="project-title">🚇 404ERROR 분석</div>
-      <p>Flask 기반 교통/인구 분석 웹앱 - ANOVA/ANCOVA 기반 통계 결과 제공</p>
-      <a href="https://drive.google.com/file/d/17MQPVwFEU2X3CWxEGzVmaJeho-1q6-rT/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm">프로젝트 다운로드</a>
-
-      <div class="video-row">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/N9cz45u9Jc4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/kS8kP76a0dU" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section id="chatbot" class="hidden">
-      <div class="project-title">🤖 AI 챗봇</div>
-      <p>GPT API 기반 대화형 챗봇, 실시간 답변 및 사용자 맞춤 대화 가능</p>
-    </section>
-
-    <section id="gantt" class="hidden">
-      <div class="project-title">📊 Gantt 일정툴</div>
-      <p>엑셀 기반 간트차트 구현, 팀 협업 관리용 툴</p>
-    </section>
-
-    <section id="web" class="hidden">
-      <div class="project-title">🕸 웹 크롤링</div>
-      <p>BeautifulSoup 기반 뉴스/데이터 자동 수집 및 분석</p>
-    </section>
+    <section id="project-content" class="hidden"></section>
   </div>
 
+  <script>
+    function goHome() {
+      window.location.hash = "about";
+      document.getElementById("project-content").classList.add("hidden");
+      document.getElementById("about").classList.remove("hidden");
+    }
 
+    function loadDynamicProjectContent() {
+      const hash = location.hash.replace("#", "");
+      const about = document.getElementById("about");
+      const content = document.getElementById("project-content");
+
+      if (!hash || hash === "about") {
+        about.classList.remove("hidden");
+        content.classList.add("hidden");
+        return;
+      }
+
+      about.classList.add("hidden");
+      content.innerHTML = "";
+      content.classList.remove("hidden");
+
+      if (hash === "isyou") {
+        content.innerHTML = `
+          <iframe src="http://cscp2.sogang.ac.kr/CSE4187/index.php/ISYOU(Information_Security_for_YOU" 
+                  style="width: 100%; height: 100vh; border: none;"></iframe>
+        `;
+      } 
+      else if (hash === "save-time") {
+        content.innerHTML = `
+          <iframe src="http://cscp2.sogang.ac.kr/CSE4186/index.php/2018%EB%85%84_1%ED%95%99%EA%B8%B0_6%EC%A1%B0" 
+                  style="width: 100%; height: 100vh; border: none;"></iframe>
+        `;
+      }
+      else {
+        fetch(`projects/${hash}.html`)
+          .then(res => res.text())
+          .then(html => {
+            content.innerHTML = html;
+          })
+          .catch(() => {
+            content.innerHTML = "<p>프로젝트를 불러오지 못했습니다.</p>";
+          });
+      }
+    }
+
+    window.addEventListener("load", loadDynamicProjectContent);
+    window.addEventListener("hashchange", loadDynamicProjectContent);
+  </script>
 </body>
 </html>
-
