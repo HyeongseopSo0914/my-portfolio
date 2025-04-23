@@ -1,0 +1,149 @@
+/* ----------------------------
+   기본 레이아웃 및 배경 스타일
+----------------------------- */
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Malgun Gothic', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* ----------------------------
+     사이드바 스타일
+  ----------------------------- */
+  .sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar h4 {
+    color: #d0ff00;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+  
+  .sidebar a.active-link {
+    background-color: #495057;
+    color: #ff0798;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+
+  .nav-subtitle {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #00ff37;
+    border-left: 3px solid #ffffff;
+    padding-left: 8px;
+  }
+  
+  /* ----------------------------
+     메인 콘텐츠 영역
+  ----------------------------- */
+  .main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: -1px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .project-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .btn-outline-primary {
+    margin-top: 10px;
+  }
+  
+  /* ----------------------------
+     자기소개 페이지 - 핫 프로젝트 카드
+  ----------------------------- */
+  .hot-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    border-left: 4px solid #ffc107;
+    color: #f1f1f1;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    width: calc(50% - 10px);
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    background-color: #292929;
+    transform: scale(1.02);
+  }
+  
+  .project-card span {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .project-card small {
+    color: #bbbbbb;
+    font-size: 0.9em;
+  }
+  
+  /* ----------------------------
+     YouTube 동영상 영역
+  ----------------------------- */
+  .video-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .video-container {
+    flex: 1 1 45%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+  }
+  
