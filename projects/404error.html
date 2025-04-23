@@ -1,0 +1,187 @@
+<!-- projects/404error.html -->
+<div class="project-wiki">
+    <h2 id="project-title">404ERROR 프로젝트(공공 데이터 분석)</h2>
+    <p><strong>Flask 기반</strong>의 통계 분석 웹앱 프로젝트입니다.</p>
+  
+    <!-- 목차 -->
+    <div class="toc-box">
+      <strong>목차</strong>
+      <ul>
+        <li><a href="#intro">1. 프로젝트 개요</a></li>
+        <li><a href="#team">2. 팀 소개</a></li>
+        <li><a href="#schedule">3. 개발일정</a></li>
+        <li><a href="#tech">4. 기술 스택</a></li>
+        <li><a href="#structure">5. 프로젝트 구조</a></li>
+        <li><a href="#feature">6. 주요 기능</a></li>       
+        <li><a href="#result">7. 분석 결과</a></li>
+        <li><a href="#minutes">8. 회의록</a></li>
+        <li><a href="#link">9. 링크 및 자료</a></li>
+      </ul>
+    </div>
+
+    <h3 id="intro">1. 프로젝트 개요</h3>
+    <section>
+        <li><strong>프로젝트명 :</strong> 공공데이터를 활용한 데이터 분석</li>
+    
+        <li style="margin-top: 0.5rem;"><strong>프로젝트 구현내용</strong>
+          <ul style="margin-left: 1rem;">
+            <li>Flask 기반 웹 애플리케이션 구현 및 Blueprint 구조 설계</li>
+            <li>MySQL 로컬 DB 연동을 통한 실시간 데이터 처리</li>
+            <li>Seaborn, Matplotlib, Scipy, Pandas로 통계 분석 (ANOVA, ANCOVA, 상관분석 등)</li>
+            <li>다양한 웹 기능 구현 (대시보드, 사용자 인터랙션, 템플릿 등)</li>
+          </ul>
+        </li>
+    
+        <li style="margin-top: 0.5rem;"><strong>프로젝트의 활용</strong>
+          <ul style="margin-left: 1rem;">
+            <li> 코로나 전후 5년간 데이터로 사회 변화 분석</li>
+            <li> 대중교통 이용 패턴 기반 운행 전략 수립</li>
+            <li> 인구 이동 트렌드 기반 도시계획 자료 제공</li>
+            <li> 기후 요인이 교통·인구에 미치는 영향 분석</li>
+            <li> 시각화 대시보드 기반 의사결정 지원</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    
+
+    <h3 id="team">2. 팀소개</h3>
+    <ul>
+      <li>팀명 : 404ERROR</li>
+      <li>
+        팀원
+        <table class="table-clean">
+          <thead>
+            <tr>
+              <th>직책</th>
+              <th>이름</th>
+              <th>개발내용</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>팀장</td>
+              <td>소형섭</td>
+              <td>데이터 분석, 전체적인 홈페이지UI, DB 연동, Flask 백엔드, 작업 분업화</td>
+            </tr>
+            <tr>
+              <td>팀원</td>
+              <td>이훈기</td>
+              <td>데이터 분석, 로그인·회원가입 폼</td>
+            </tr>
+            <tr>
+              <td>팀원</td>
+              <td>정상철</td>
+              <td>데이터 분석, 대시보드</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <div class="golden-rule">
+        <strong>Golden Rule</strong>
+        <ol>
+          <li>회의는 수업시간에 주어진 프로젝트 시간에 하는걸 원칙으로 한다.</li>
+          <li>회의는 50분 진행 후 10분의 휴식 시간을 가진다.</li>
+          <li>회의의 마지막에는 다음 회의의 주제를 미리 정하고 마무리한다. 부득이하게 주제가 정해지지 않았더라도 회의는 그대로 진행하는 것을 원칙으로 한다.</li>
+          <li>서로의 의견은 항상 솔직하게 공유한다.</li>
+          <li>회의에 불참하게 된 사람은 매 회의 시작 시에 10분간 불참 사유에 대해 발표 시간을 가진다.</li>
+          <li>회의록은 담당자가 정리한다.</li>
+          <li>매 주 발견된 이슈나 논의 할 사항은 정해진 플랫폼을 통해 빠르게 공유하고 다음 회의 때 논의하도록 한다.</li>
+        </ol>
+      </div>
+    </ul>
+
+    <h3 id="schedule">3. 개발일정</h3>
+    <div class="image-box">
+      <img src="404error_schedule.png" alt="404ERROR 개발 일정" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 5px;">
+    </div>
+
+    <h3 id="tech">4. 기술 스택</h3>
+    <ul>
+      <li>Python (Pandas, Flask)</li>
+      <li>Statsmodels, Seaborn</li>
+      <li>HTML/CSS, JavaScript</li>
+    </ul>
+    
+    <h3 id="structure">5. 프로젝트 구조</h3>
+    <div class="image-box">
+      <img src="404error_structure.png" alt="404ERROR 전체 구조" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 5px;">
+    </div>
+
+    <h3 id="feature">6. 주요 기능</h3>
+    <ul>
+      <li>ANOVA/ANCOVA 기반 시각적 분석</li>
+      <li>자치구별로 데이터 분석</li>
+      <li>날씨와의 상관관계 분석</li>
+    </ul>
+  
+    <h3 id="result">7. 분석 결과</h3>
+
+      <table border="1" cellspacing="0" cellpadding="8" style="border-collapse: collapse; width: 100%; text-align: center;">
+        <thead>
+          <tr style="background-color: #f2f2f2;">
+            <th>항목</th>
+            <th>분석 결과</th>
+            <th>해석 요약</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>지하철 이용량</td>
+            <td>ANOVA, Tukey HSD 유의함 (p &lt; 0.001)</td>
+            <td>코로나 절정기에 급감, 이후 회복세</td>
+          </tr>
+          <tr>
+            <td>버스 이용량</td>
+            <td>ANOVA, Tukey HSD 유의함 (p &lt; 0.001)</td>
+            <td>지하철과 유사하게 변화, 절정기 감소 후 종식기부터 회복</td>
+          </tr>
+          <tr>
+            <td>총생활인구수</td>
+            <td>ANOVA 유의함 (p &lt; 0.001)</td>
+            <td>절정기 이전보다 감소, 이후 완만히 회복</td>
+          </tr>
+          <tr>
+            <td>평균기온</td>
+            <td>ANOVA 유의하나 Tukey 미미</td>
+            <td>기온 변화는 계절성 영향이 큼</td>
+          </tr>
+          <tr>
+            <td>일강수량</td>
+            <td>ANOVA 유의함 (p &lt; 0.01)</td>
+            <td>시기별 분산 차이 존재, 절정기·종식기 이상치 영향</td>
+          </tr>
+          <tr>
+            <td>ANCOVA (공변량: 지하철)</td>
+            <td>코로나 시기, 지하철 모두 유의함 (p &lt; 0.001)</td>
+            <td>지하철 이용량이 버스 승객 수에 강한 영향</td>
+          </tr>
+          <tr>
+            <td>설명력 (모델 한계)</td>
+            <td>R² 유사 추정: 약 36.9%</td>
+            <td>전체 변화의 일부만 설명, 외부 요인 포함 필요</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 1em;"><strong>결론:</strong> 코로나 시기에 따라 대중교통 이용량과 인구에 유의미한 변화가 있었으며, 특히 지하철과 버스는 절정기에 이용이 급감하고 이후 점진적으로 회복됨. 기후 변수는 계절적 요인의 영향을 더 크게 받는 것으로 해석됨. ANCOVA 분석을 통해 지하철 이용량이 버스 수요에 영향을 주는 것도 확인됨.</p>
+
+    <h3 id="minutes">8. 회의록</h3>
+    <ul>
+      <li><a href="https://drive.google.com/file/d/1Vd_nRkLJKWytfX5IFFucNsNOl-3bTTtE/view?usp=drive_link" target="_blank">250408회의록</a></li>
+      <li><a href="https://drive.google.com/file/d/1PKvHLv3aOirKJGrJtkytJ7heEwflaVKt/view?usp=drive_link" target="_blank">250410회의록</a></li>
+      <li><a href="https://drive.google.com/file/d/1On6MSEnbQF6GOOxJYlRsJqh0IJx0nRpj/view?usp=drive_link" target="_blank">250414회의록</a></li>
+      <li><a href="https://drive.google.com/file/d/1ooT5P8ofwhaqrSAbvPozmMkveQG7viXZ/view?usp=drive_link" target="_blank">250416회의록</a></li>
+      <li><a href="https://drive.google.com/file/d/1DpK1usnbsBtOaJZvie4kfTHieeXcmVnv/view?usp=drive_link" target="_blank">250418회의록</a></li>
+      <li><a href="https://drive.google.com/file/d/1zuSzNEh5zA6dms1D0HVo8iLSudLff5A3/view?usp=drive_link" target="_blank">250422회의록</a></li>
+    </ul>
+  
+    <h3 id="link">9. 링크 및 자료</h3>
+    <ul>
+      <li><a href="https://drive.google.com/file/d/17MQPVwFEU2X3CWxEGzVmaJeho-1q6-rT/view?usp=drive_link" target="_blank">프로젝트 다운로드</a></li>
+      <li><a href="https://youtu.be/N9cz45u9Jc4" target="_blank">시연 영상1</a></li>
+      <li><a href="https://youtu.be/kS8kP76a0dU" target="_blank">시연 영상2</a></li>
+      <li><a href="https://docs.google.com/presentation/d/17xyLgsHAqD1DnuR-RsOGIuhjihlkKjNZ/edit?usp=drive_link&ouid=102470934016920204457&rtpof=true&sd=true" target="_blank">발표자료</a></li>
+    </ul>
+  </div>
+  
