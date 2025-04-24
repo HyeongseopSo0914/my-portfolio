@@ -421,3 +421,20 @@ body {
   margin-bottom: 8px;
   line-height: 1.6;
 }
+/* ----------------------------
+   11. 모바일
+----------------------------- */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  .dashboard {
+    flex-direction: column;
+  }
+}
