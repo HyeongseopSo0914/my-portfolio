@@ -1,358 +1,172 @@
 /* ----------------------------
-   기본 레이아웃 및 배경 스타일
+   1. 기본 레이아웃 및 폰트, 배경
 ----------------------------- */
 html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
 
 body {
-    display: flex;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Malgun Gothic', sans-serif;
-    background-color: #f8f9fa;
-  }
-  
-  /* ----------------------------
-     사이드바 스타일
-  ----------------------------- */
-  .sidebar {
-    background-color: #8bc4fd;
-    color: #ecf0f1;
-    padding: 20px;
-    width: 200px;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .sidebar-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ff9100;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-  
-  .sidebar-section {
-    margin-bottom: 16px;
-  }
-  
-  .sidebar-subtitle {
-    font-size: 25px;
-    font-weight: 500;
-    color: #000000;
-    margin-bottom: 4px;
-    border-left: 3px solid #7f8c8d;
-    padding-left: 8px;
-  }
-  
-  .sidebar-link {
-    display: block;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 600;
-    margin-left: 8px;
-    padding: 4px 0;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  .sidebar-link:hover {
-    color: #1abc9c;
-  }
-  /* ----------------------------
-     숙련도 영역
-  ----------------------------- */  
-  .skills-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100px;
-  }
-  
-  .skill-item img {
-    height: 40px;
-    width: auto;
-    margin-bottom: 8px;
-  }
-  
-  .progress-bar {
-    width: 100%;
-    height: 6px;
-    background-color: #444;
-    border-radius: 3px;
-    margin-top: 4px;
-    overflow: hidden;
-  }
-  
-  .progress {
-    height: 100%;
-    background-color: #4caf50;
-    border-radius: 3px;
-  }
-
-
-  /* ----------------------------
-     메인 콘텐츠 영역
-  ----------------------------- */
-  .main-content {
-    flex-grow: 1;
-    padding: 30px;
-    overflow-y: auto;
-    background-color: white;
-    box-shadow: -1px 0 5px rgba(0,0,0,0.1);
-  }
-  
-  .project-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .btn-outline-primary {
-    margin-top: 10px;
-  }
-  
-  /* ----------------------------
-     자기소개 페이지 - 핫 프로젝트 카드
-  ----------------------------- */
-  .hot-projects {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 20px;
-  }
-  
-  .project-card {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 8px;
-    flex: 1;
-    min-width: 250px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
-  }
-  
-  .project-card:hover {
-    background-color: #e8f0fe;
-    border-color: #4285f4;
-    box-shadow: 0 4px 8px rgba(66, 133, 244, 0.2);
-  }
-  
-  .project-card span {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  
-  .project-card small {
-    color: #bbbbbb;
-    font-size: 0.9em;
-  }
-  
-  /* ----------------------------
-     YouTube 동영상 영역
-  ----------------------------- */
-  .video-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .video-container {
-    flex: 1 1 45%;
-    max-width: 500px;
-    aspect-ratio: 16 / 9;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  
-  .video-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 12px;
-  }
-
- 
-  /* ----------------------------
-    위키 스타일 콘텐츠
------------------------------ */
-.project-wiki {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 30px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #212529;
-  }
-  
-  .project-wiki h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-  }
-  
-  .project-wiki h3 {
-    font-size: 1.2rem;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: #004a8f;
-  }
-  
-  .project-wiki ul {
-    padding-left: 20px;
-    list-style-type: disc;
-  }
-  
-  .project-wiki li {
-    margin-bottom: 6px;
-  }
-  
-  /* ----------------------------
-     목차 스타일
-  ----------------------------- */
-  .toc-box {
-    background-color: #f8f9fa;
-    border: 1px solid #ccc;
-    padding: 15px 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-  }
-  
-  .toc-box strong {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .toc-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .toc-box li {
-    margin: 6px 0;
-  }
-  
-  .toc-box a {
-    color: #0056b3;
-    text-decoration: none;
-  }
-  
-  .toc-box a:hover {
-    text-decoration: underline;
-  }
-
-/* 위키 스타일 테이블 */
-.table-clean {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    font-size: 0.95rem;
-  }
-  
-  .table-clean th,
-  .table-clean td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .table-clean thead th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    text-align: center; /* 헤더 가운데 정렬 */
-  }
-  
-  .table-clean tbody td:first-child,
-  .table-clean tbody td:nth-child(2) {
-    text-align: center; /* 직책, 이름도 가운데 정렬 */
-  }
-
-  .golden-rule {
-    border: 1px dashed #999;
-    padding: 15px;
-    margin: 20px 0;
-    background-color: #fff;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-  
-  .golden-rule strong {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .golden-rule ol {
-    padding-left: 20px;
-    margin: 0;
-  }
-  
-  .golden-rule li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-  }
-body {
-  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  height: 100vh;
   margin: 0;
-  background: #f9f9f9;
+  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  background-color: #f9f9f9;
   color: #333;
 }
-
-.sidebar h4 {
-  margin-top: 0;
+.section-block {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+  margin-top: 40px;
 }
-.sidebar a {
+
+
+/* ----------------------------
+   2. 사이드바 스타일
+----------------------------- */
+.sidebar {
+  background-color: #8bc4fd;
+  color: #ecf0f1;
+  padding: 20px;
+  width: 200px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sidebar-divider {
+  border: none;
+  height: 1px;
+  background-color: #ffffff33; /* 연한 흰색 선 */
+  margin: 10px 0;
+}
+
+.resume-link {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.resume-link a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1px solid #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background 0.3s, color 0.3s;
+}
+
+.resume-link a:hover {
+  background-color: #fff;
+  color: #007acc;
+}
+
+.sidebar-gap {
+  margin-top: 30px;
+}
+
+.sidebar-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+}
+.sidebar-title:hover {
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.sidebar-section {
+  margin-bottom: 16px;
+}
+
+.sidebar-subtitle {
+  font-size: 25px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 4px;
+  border-left: 3px solid #7f8c8d;
+  padding-left: 8px;
+}
+
+.sidebar a,
+.sidebar-link {
   display: block;
-  color: white;
+  color: #fff;
   text-decoration: none;
   margin: 0.5rem 0;
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.2s;
+  margin-left: 8px;
+  padding: 4px 0;
 }
+
+.sidebar-link:hover {
+  color: #1abc9c;
+}
+
 .sidebar .nav-subtitle {
   margin-top: 1rem;
   font-size: 0.85rem;
   color: #ccc;
 }
-.main-content {
-  margin-left: 260px;
-  padding: 2rem;
+
+.sidebar h4 {
+  margin-top: 0;
 }
+
+/* ----------------------------
+   3. 메인 콘텐츠 영역
+----------------------------- */
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  margin-left: 260px;
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: -1px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ----------------------------
+   4. 대시보드 및 프로필 영역
+----------------------------- */
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
   margin-bottom: 2rem;
 }
+
 .profile-img {
   width: 100%;
+  max-width: 250px;
+  height: auto;
   border-radius: 12px;
   margin-bottom: 1rem;
 }
+
+/* ----------------------------
+   5. 프로젝트 카드
+----------------------------- */
 .project-card-container {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
+
 .project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   background: white;
   border: 1px solid #ddd;
   padding: 1rem;
@@ -360,7 +174,29 @@ body {
   flex: 1;
   min-width: 250px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
+
+.project-card:hover {
+  background-color: #e8f0fe;
+  border-color: #4285f4;
+  box-shadow: 0 4px 8px rgba(66, 133, 244, 0.2);
+}
+
+.project-card span {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.project-card small {
+  color: #bbb;
+  font-size: 0.9em;
+}
+
+/* ----------------------------
+   6. 하단 정보 (GitHub, 스킬, 자기소개)
+----------------------------- */
 .bottom-info {
   display: flex;
   justify-content: space-between;
@@ -368,10 +204,220 @@ body {
   gap: 2rem;
   margin-top: 2rem;
 }
+
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
+
 .skills-icons img {
   height: 30px;
   margin-right: 10px;
 }
-.hidden {
-  display: none;
+
+.skill-item img {
+  height: 40px;
+  width: auto;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #444;
+  border-radius: 3px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 3px;
+}
+
+.toggle-btn {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.toggle-btn:hover {
+  background-color: #005fa3;
+}
+
+.self-intro-box {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px dashed #aaa;
+  background-color: #fefefe;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+/* ----------------------------
+   7. 유튜브 동영상 영역
+----------------------------- */
+.video-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.video-container {
+  flex: 1 1 45%;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ----------------------------
+   8. 위키 스타일 콘텐츠
+----------------------------- */
+.project-wiki {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #212529;
+}
+
+.project-wiki h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.project-wiki h3 {
+  font-size: 1.2rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #004a8f;
+}
+
+.project-wiki ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.project-wiki li {
+  margin-bottom: 6px;
+}
+
+/* ----------------------------
+   9. 목차 스타일
+----------------------------- */
+.toc-box {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.toc-box strong {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.toc-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-box li {
+  margin: 6px 0;
+}
+
+.toc-box a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.toc-box a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------
+   10. 테이블 및 룰박스
+----------------------------- */
+.table-clean {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.table-clean th,
+.table-clean td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.table-clean thead th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-clean tbody td:first-child,
+.table-clean tbody td:nth-child(2) {
+  text-align: center;
+}
+
+.golden-rule {
+  border: 1px dashed #999;
+  padding: 15px;
+  margin: 20px 0;
+  background-color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.golden-rule strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.golden-rule ol {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.golden-rule li {
+  margin-bottom: 8px;
+  line-height: 1.6;
 }
