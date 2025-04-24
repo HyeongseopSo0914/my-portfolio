@@ -9,23 +9,28 @@
 <body>
   <div class="sidebar">
     <h2 class="sidebar-title" onclick="goHome()">So Hyeongseop's Portfolio</h2>
-  
-    <div class="sidebar-section">
-      <div class="sidebar-subtitle">서강대학교<br /> 캡스톤디자인</div>
+    <hr class="sidebar-divider" />
+
+    <div class="resume-link">
+      <a href="resume.pdf" target="_blank">이력서 보기</a>
     </div>
   
-    <div class="sidebar-section">
+    <div class="sidebar-section sidebar-gap">
+      <div class="sidebar-subtitle">서강대학교<br>캡스톤디자인</div>
+    </div>
+  
+    <div class="sidebar-section sidebar-gap">
       <a href="#save-time" class="sidebar-link">-Save time</a>
       <a href="#isyou" class="sidebar-link">-ISyou</a>
     </div>
   
     <div class="sidebar-section">
-      <div class="sidebar-subtitle">휴먼교육센터 서울</div>
+      <div class="sidebar-subtitle">휴먼교육센터<br>서울</div>
     </div>
   
     <div class="sidebar-section">
-      <a href="#matchday" class="sidebar-link">-JSP 기반 FE/BE</a>
-      <a href="#404error" class="sidebar-link">-Python 데이터 분석</a>
+      <a href="#matchday" class="sidebar-link">-JSP 기반 FE/BE<br>(25.01~02)</a>
+      <a href="#404error" class="sidebar-link">-Python 데이터 분석<br>(25.04)</a>
     </div>
   </div>
 
@@ -38,27 +43,28 @@
       <div class="dashboard">
         <div>
           <img src="profile.jpg" alt="프로필 사진" class="profile-img" />
-          <div>
+          <div class="section-block">
             <h3>개인 정보</h3>
             <p><strong>이름:</strong> 소형섭</p>
+            <p><strong>생년월일:</strong> 1992.09.14</p>
             <p><strong>이메일:</strong> shs1492@gmail.com</p>
             <p><strong>연락처:</strong> 010-4416-5263</p>
             <p><strong>주소:</strong> 서울특별시 영등포구 도신로 53길 10</p>
           </div>
         </div>
 
-        <div>
+        <div class="section-block">
           <h3>학력</h3>
           <p>서강대학교 컴퓨터공학과 졸업 (2011~2019)</p>
           <p>휴먼교육센터 KDT 과정 (2025.02~)</p>
 
-          <h3>경력</h3>
+          <h3 class="section-block">경력</h3>
           <p>수학학원 강사 (2017~2019)</p>
           <p>마인즈랩 인턴 (2022.06~2022.09)</p>
           <p>강사 및 과외 (2022~2023)</p>
           <p>건설 현장 비계공 (2024)</p>
 
-          <h3>활동 및 자격증</h3>
+          <h3 class="section-block">활동 및 자격증</h3>
           <ul>
             <li>서강 기우회 회장 (2016)</li>
             <li>정보처리기사</li>
@@ -67,29 +73,29 @@
         </div>
       </div>
 
-      <h3>주요 프로젝트</h3>
+      <h3 class="section-block">주요 프로젝트</h3>
       <div class="project-card-container">
-        <div class="project-card">
+        <a href="#isyou" class="project-card">
           <h4>ISyou</h4>
           <p>앱 잠금 보안 애플리케이션 (Swift 기반)</p>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="#matchday" class="project-card">
           <h4>Matchday</h4>
           <p>온라인 보드게임 모임 플랫폼 (JSP 기반 웹사이트)</p>
-        </div>
-        <div class="project-card">
+        </a>
+        <a href="#404error" class="project-card">
           <h4>404ERROR</h4>
           <p>공공데이터 기반 Python 데이터 분석 프로젝트</p>
-        </div>
+        </a>
       </div>
 
       <div class="bottom-info">
         <div class="github">
-          <h4>GitHub</h4>
+          <h4 class="section-block">GitHub</h4>
           <a href="https://github.com/HyeongseopSo0914" target="_blank">github.com/HyeongseopSo0914</a>
         </div>
         <div class="skills">
-          <h4>보유 스킬 및 숙련도</h4>
+          <h4 class="section-block">보유 스킬 및 숙련도</h4>
           <div class="skills-icons">
             <div class="skill-item">
               <img src="images_lan/C.svg" alt="C" />
@@ -124,8 +130,31 @@
           </div>
         </div>
       </div>
+      <div class="section-block">
+        <h3>자기소개</h3>
+        <hr />
+        <button class="toggle-btn" onclick="toggleSelfIntro()">[펼치기]</button>
+      
+        <div id="self-intro" class="hidden self-intro-box">
+          <p>
+            저는 서강대학교 컴퓨터공학과를 졸업한 개발자 지망생으로,<br />
+            다양한 인생 경험 속에서도 기술에 대한 열정을 놓지 않았습니다.
+          </p>
+          <p>
+            수학 강사, 마인즈랩 인턴, 상하차와 건설 현장 경험까지—<br />
+            이 모든 경험은 저를 더욱 단단하게 만들었습니다.
+          </p>
+          <p>
+            현재는 K-Digital Training 과정을 통해 Python 기반 데이터 분석, 웹 개발 등을 학습하며<br />
+            다시 IT 업계로의 도약을 준비하고 있습니다.
+          </p>
+          <p>
+            다양한 경험과 진정성 있는 태도로 함께 성장하는 개발자가 되겠습니다.
+          </p>
+        </div>
+      </div>
     </section>
-
+    
     <section id="project-content" class="hidden"></section>
   </div>
 
@@ -177,6 +206,19 @@
 
     window.addEventListener("load", loadDynamicProjectContent);
     window.addEventListener("hashchange", loadDynamicProjectContent);
+    function toggleSelfIntro() {
+      const intro = document.getElementById("self-intro");
+      const button = document.querySelector(".toggle-btn");
+      const isHidden = intro.classList.contains("hidden");
+
+      if (isHidden) {
+        intro.classList.remove("hidden");
+        button.textContent = "[접기]";
+      } else {
+        intro.classList.add("hidden");
+        button.textContent = "[펼치기]";
+      }
+    }
   </script>
 </body>
 </html>
