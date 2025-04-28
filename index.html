@@ -141,7 +141,7 @@
             다양한 인생 경험 속에서도 기술에 대한 열정을 놓지 않았습니다.
           </p>
           <p>
-            수학 강사, 마인즈랩 인턴, 상하차와 건설 현장 경험까지—<br />
+            수학 강사, 마인즈랩 인턴, 상하차와 건설 현장 경험까지<br />
             이 모든 경험은 저를 더욱 단단하게 만들었습니다.
           </p>
           <p>
@@ -180,17 +180,23 @@
       content.innerHTML = "";
       content.classList.remove("hidden");
 
+      // if (hash === "isyou") {
+      //   content.innerHTML = `
+      //     <iframe src="https://cscp2.sogang.ac.kr/CSE4187/index.php/ISYOU(Information_Security_for_YOU" 
+      //             style="width: 100%; height: 100vh; border: none;"></iframe>
+      //   `;
+      // } 
+      // else if (hash === "save-time") {
+      //   content.innerHTML = `
+      //     <iframe src="https://cscp2.sogang.ac.kr/CSE4186/index.php/2018%EB%85%84_1%ED%95%99%EA%B8%B0_6%EC%A1%B0" 
+      //             style="width: 100%; height: 100vh; border: none;"></iframe>
+      //   `;
+      // }
       if (hash === "isyou") {
-        content.innerHTML = `
-          <iframe src="http://cscp2.sogang.ac.kr/CSE4187/index.php/ISYOU(Information_Security_for_YOU" 
-                  style="width: 100%; height: 100vh; border: none;"></iframe>
-        `;
+        window.open("http://cscp2.sogang.ac.kr/CSE4187/index.php/ISYOU(Information_Security_for_YOU", "_blank");
       } 
       else if (hash === "save-time") {
-        content.innerHTML = `
-          <iframe src="http://cscp2.sogang.ac.kr/CSE4186/index.php/2018%EB%85%84_1%ED%95%99%EA%B8%B0_6%EC%A1%B0" 
-                  style="width: 100%; height: 100vh; border: none;"></iframe>
-        `;
+        window.open("http://cscp2.sogang.ac.kr/CSE4186/index.php/2018%EB%85%84_1%ED%95%99%EA%B8%B0_6%EC%A1%B0", "_blank");
       }
       else {
         fetch(`projects/${hash}.html`)
