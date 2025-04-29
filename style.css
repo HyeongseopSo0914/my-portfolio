@@ -121,6 +121,66 @@ body {
   margin-top: 0;
 }
 
+.visitor-counts {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.visitor-item {
+  text-align: center;
+}
+
+.visitor-item .label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.visitor-item span {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+}
+.rainbow-text {
+  background-image: linear-gradient(
+    -45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  background-size: 400% 400%;
+  background-clip: text; /* 최신 문법 */
+  -webkit-background-clip: text; /* Chrome, Safari 호환 */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 6s ease infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /* ----------------------------
    3. 메인 콘텐츠 영역
 ----------------------------- */
