@@ -1,336 +1,384 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <title>So Hyeongseop | 포트폴리오</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Firebase App (core) -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <!-- Firebase Firestore -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>So Hyeongseop | 포트폴리오</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Firebase App (core) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
-  <script>
-    // Firebase DB connect //
-    const firebaseConfig = {
-      apiKey: "AIzaSyDrqelbF7qJ2DXxoRIlqOAJFf6VYBLNtJs",
-      authDomain: "my-portfolio-cb1f9.firebaseapp.com",
-      projectId: "my-portfolio-cb1f9",
-      storageBucket: "my-portfolio-cb1f9.firebasestorage.app",
-      messagingSenderId: "856888227019",
-      appId: "1:856888227019:web:ffba78856df4ea5d06d74e",
-      measurementId: "G-SFFLQ4EGXS"
-    };
+    <script>
+      // Firebase DB connect //
+      const firebaseConfig = {
+        apiKey: "AIzaSyDrqelbF7qJ2DXxoRIlqOAJFf6VYBLNtJs",
+        authDomain: "my-portfolio-cb1f9.firebaseapp.com",
+        projectId: "my-portfolio-cb1f9",
+        storageBucket: "my-portfolio-cb1f9.firebasestorage.app",
+        messagingSenderId: "856888227019",
+        appId: "1:856888227019:web:ffba78856df4ea5d06d74e",
+        measurementId: "G-SFFLQ4EGXS",
+      };
 
-    // Initialize Firebase //
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
-</head>
-<body>
-  <div class="sidebar">
-    <div class="visitor-counts">
-      <div class="visitor-item">
-        <span class="label">Today</span>
-        <span id="todayCount" class="rainbow-text">0</span>
+      // Initialize Firebase //
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="visitor-counts">
+        <div class="visitor-item">
+          <span class="label">Today</span>
+          <span id="todayCount" class="rainbow-text">0</span>
+        </div>
+        <div class="visitor-item">
+          <span class="label">Total</span>
+          <span id="totalCount" class="rainbow-text">0</span>
+        </div>
       </div>
-      <div class="visitor-item">
-        <span class="label">Total</span>
-        <span id="totalCount" class="rainbow-text">0</span>
+
+      <h2 class="sidebar-title" onclick="goHome()">
+        So Hyeongseop's Portfolio
+      </h2>
+      <hr class="sidebar-divider" />
+
+      <div class="resume-link">
+        <a href="resume/resume.pdf" target="_blank">이력서 보기</a>
+      </div>
+
+      <div class="sidebar-section sidebar-gap">
+        <div class="sidebar-subtitle">서강대학교<br />캡스톤디자인</div>
+      </div>
+
+      <div class="sidebar-section sidebar-gap">
+        <a href="#save-time" class="sidebar-link">-Save time</a>
+        <a href="#isyou" class="sidebar-link">-ISyou</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-subtitle">휴먼교육센터<br />서울</div>
+      </div>
+
+      <div class="sidebar-section">
+        <a href="#matchday" class="sidebar-link"
+          >-JSP 기반 FE/BE<br />(25.01~02)</a
+        >
+        <a href="#404error" class="sidebar-link"
+          >-Python 데이터 분석<br />(25.04)</a
+        >
+        <a href="#haruharu" class="sidebar-link"
+          >-모델학습 기반 챗봇 개발<br />(25.06)</a
+        >
       </div>
     </div>
 
-    <h2 class="sidebar-title" onclick="goHome()">So Hyeongseop's Portfolio</h2>
-    <hr class="sidebar-divider" />
+    <div class="main-content">
+      <section id="about">
+        <h2>안녕하세요, 소형섭입니다.</h2>
+        <p>
+          Python 기반 데이터 분석과 웹 개발로 인사이트를 창출하는 개발자입니다.
+        </p>
+        <p>
+          C언어에 능숙하고 MySQL 데이터베이스를 활용한 기본적인 DB 기술을
+          보유하고 있습니다.
+        </p>
 
-    <div class="resume-link">
-      <a href="resume/resume.pdf" target="_blank">이력서 보기</a>
-    </div>
-  
-    <div class="sidebar-section sidebar-gap">
-      <div class="sidebar-subtitle">서강대학교<br>캡스톤디자인</div>
-    </div>
-  
-    <div class="sidebar-section sidebar-gap">
-      <a href="#save-time" class="sidebar-link">-Save time</a>
-      <a href="#isyou" class="sidebar-link">-ISyou</a>
-    </div>
-  
-    <div class="sidebar-section">
-      <div class="sidebar-subtitle">휴먼교육센터<br>서울</div>
-    </div>
-  
-    <div class="sidebar-section">
-      <a href="#matchday" class="sidebar-link">-JSP 기반 FE/BE<br>(25.01~02)</a>
-      <a href="#404error" class="sidebar-link">-Python 데이터 분석<br>(25.04)</a>
-    </div>
+        <div class="dashboard">
+          <div>
+            <img src="profile.jpg" alt="프로필 사진" class="profile-img" />
+            <div class="section-block">
+              <h3>개인 정보</h3>
+              <p><strong>이름:</strong> 소형섭</p>
+              <p><strong>생년월일:</strong> 1992.09.14</p>
+              <p><strong>이메일:</strong> shs1492@gmail.com</p>
+              <p><strong>연락처:</strong> 010-4416-5263</p>
+              <p><strong>주소:</strong> 서울특별시 영등포구 도신로 53길 10</p>
+            </div>
+          </div>
 
-
-  </div>
-
-  <div class="main-content">
-
-    <section id="about">
-      <h2>안녕하세요, 소형섭입니다.</h2>
-      <p>Python 기반 데이터 분석과 웹 개발로 인사이트를 창출하는 개발자입니다.</p>
-      <p>C언어에 능숙하고 MySQL 데이터베이스를 활용한 기본적인 DB 기술을 보유하고 있습니다.</p>
-
-      <div class="dashboard">
-        <div>
-          <img src="profile.jpg" alt="프로필 사진" class="profile-img" />
           <div class="section-block">
-            <h3>개인 정보</h3>
-            <p><strong>이름:</strong> 소형섭</p>
-            <p><strong>생년월일:</strong> 1992.09.14</p>
-            <p><strong>이메일:</strong> shs1492@gmail.com</p>
-            <p><strong>연락처:</strong> 010-4416-5263</p>
-            <p><strong>주소:</strong> 서울특별시 영등포구 도신로 53길 10</p>
+            <h3>학력</h3>
+            <p>서강대학교 컴퓨터공학과 졸업 (2011~2019)</p>
+            <p>휴먼교육센터 KDT 과정 (2025.02~)</p>
+
+            <h3 class="section-block">경력</h3>
+            <p>수학학원 강사 (2017~2019)</p>
+            <p>마인즈랩 인턴 (2022.06~2022.09)</p>
+            <p>강사 및 과외 (2022~2023)</p>
+            <p>건설 현장 비계공 (2024)</p>
+
+            <h3 class="section-block">활동 및 자격증</h3>
+            <ul>
+              <li>서강 기우회 회장 (2016)</li>
+              <li>정보처리기사</li>
+              <li>SQLD</li>
+            </ul>
           </div>
         </div>
 
+        <h3 class="section-block">주요 프로젝트</h3>
+        <div class="project-card-container">
+          <a href="#isyou" class="project-card">
+            <h4>ISyou</h4>
+            <p>앱 잠금 보안 애플리케이션 (Swift 기반)</p>
+          </a>
+          <a href="#matchday" class="project-card">
+            <h4>Matchday</h4>
+            <p>온라인 보드게임 모임 플랫폼 (JSP 기반 웹사이트)</p>
+          </a>
+          <a href="#404error" class="project-card">
+            <h4>404ERROR</h4>
+            <p>공공데이터 기반 Python 데이터 분석 프로젝트</p>
+          </a>
+        </div>
+
+        <div class="bottom-info">
+          <div class="github">
+            <h4 class="section-block">GitHub</h4>
+            <a href="https://github.com/HyeongseopSo0914" target="_blank"
+              >github.com/HyeongseopSo0914</a
+            >
+          </div>
+          <div class="skills">
+            <h4 class="section-block">보유 스킬 및 숙련도</h4>
+            <div class="skills-icons">
+              <div class="skill-item">
+                <img src="images_lan/C.svg" alt="C" />
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <img src="images_lan/CPP.svg" alt="C++" />
+                <div class="progress-bar">
+                  <div class="progress" style="width: 50%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <img src="images_lan/JavaScript.svg" alt="JavaScript" />
+                <div class="progress-bar">
+                  <div class="progress" style="width: 70%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <img src="images_lan/Python-Dark.svg" alt="Python" />
+                <div class="progress-bar">
+                  <div class="progress" style="width: 70%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <img src="images_lan/MySQL-Light.svg" alt="MySQL" />
+                <div class="progress-bar">
+                  <div class="progress" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="section-block">
-          <h3>학력</h3>
-          <p>서강대학교 컴퓨터공학과 졸업 (2011~2019)</p>
-          <p>휴먼교육센터 KDT 과정 (2025.02~)</p>
+          <h3>자기소개</h3>
+          <hr />
+          <button class="toggle-btn" onclick="toggleSelfIntro()">
+            [펼치기]
+          </button>
 
-          <h3 class="section-block">경력</h3>
-          <p>수학학원 강사 (2017~2019)</p>
-          <p>마인즈랩 인턴 (2022.06~2022.09)</p>
-          <p>강사 및 과외 (2022~2023)</p>
-          <p>건설 현장 비계공 (2024)</p>
+          <div id="self-intro" class="hidden self-intro-box">
+            <p>
+              저는 서강대학교 컴퓨터공학과를 졸업하고 정보처리기사 자격증을
+              취득한 개발자입니다.<br />
+              학사 과정 중 모바일 백그라운드 보안 애플리케이션 개발을
+              수행했으며,<br />
+              기존 길찾기 앱에 최소환승과 세부 길안내 기능을 추가하는 앱 개발을
+              시도하여<br />
+              실질적인 문제 해결 능력을 키웠습니다.
+            </p>
 
-          <h3 class="section-block">활동 및 자격증</h3>
-          <ul>
-            <li>서강 기우회 회장 (2016)</li>
-            <li>정보처리기사</li>
-            <li>SQLD</li>
-          </ul>
-        </div>
-      </div>
+            <p>
+              운영체제 프로젝트를 통해 프로그래밍 언어 및 시스템 구조에 대한
+              깊은 이해를 갖추었고,<br />
+              이를 바탕으로 새로운 언어를 빠르게 습득할 수 있는 기반을
+              마련했습니다.
+            </p>
 
-      <h3 class="section-block">주요 프로젝트</h3>
-      <div class="project-card-container">
-        <a href="#isyou" class="project-card">
-          <h4>ISyou</h4>
-          <p>앱 잠금 보안 애플리케이션 (Swift 기반)</p>
-        </a>
-        <a href="#matchday" class="project-card">
-          <h4>Matchday</h4>
-          <p>온라인 보드게임 모임 플랫폼 (JSP 기반 웹사이트)</p>
-        </a>
-        <a href="#404error" class="project-card">
-          <h4>404ERROR</h4>
-          <p>공공데이터 기반 Python 데이터 분석 프로젝트</p>
-        </a>
-      </div>
+            <p>
+              이후 K-Digital Training 과정을 통해 C, C++, JavaScript, Python,
+              MySQL 등 다양한 기술을 추가로 학습하였고,<br />
+              프론트엔드와 백엔드를 모두 경험하는 Matchday 프로젝트(JSP 기반
+              웹사이트) 개발과 웹 호스팅을 직접 수행했습니다.<br />
+              또한, 404Error 프로젝트를 통해 Python 기반으로 공공데이터를
+              분석하고 시각화하는 경험을 쌓았습니다.
+            </p>
 
-      <div class="bottom-info">
-        <div class="github">
-          <h4 class="section-block">GitHub</h4>
-          <a href="https://github.com/HyeongseopSo0914" target="_blank">github.com/HyeongseopSo0914</a>
-        </div>
-        <div class="skills">
-          <h4 class="section-block">보유 스킬 및 숙련도</h4>
-          <div class="skills-icons">
-            <div class="skill-item">
-              <img src="images_lan/C.svg" alt="C" />
-              <div class="progress-bar">
-                <div class="progress" style="width: 80%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <img src="images_lan/CPP.svg" alt="C++" />
-              <div class="progress-bar">
-                <div class="progress" style="width: 50%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <img src="images_lan/JavaScript.svg" alt="JavaScript" />
-              <div class="progress-bar">
-                <div class="progress" style="width: 70%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <img src="images_lan/Python-Dark.svg" alt="Python" />
-              <div class="progress-bar">
-                <div class="progress" style="width: 70%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <img src="images_lan/MySQL-Light.svg" alt="MySQL" />
-              <div class="progress-bar">
-                <div class="progress" style="width: 70%"></div>
-              </div>
-            </div>
+            <p>
+              이를 통해 웹 개발부터 데이터 분석까지 폭넓은 역량을 갖추게
+              되었으며,<br />
+              다양한 기술을 실제 프로젝트에 적용해본 실전 감각을 보유하고
+              있습니다.
+            </p>
+
+            <p>
+              기술적 전문성과 다양한 경험을 바탕으로,<br />
+              입사 후 빠르게 적응하고 성장하여 미래가 기대되는 구성원이
+              되겠습니다.
+            </p>
+
+            <p>
+              대학교 3학년 시절, 서강대학교 기우회 회장을 맡아 다양한 사람들과
+              소통하고 협력하며 조직을 운영하는 경험을 쌓았습니다.<br />
+              특히 부원들의 저조한 대회 참여율을 높이기 위해, 부원들의
+              애로사항을 경청하는 자세와 조율의 중요성을 깊이 깨달았습니다.<br />
+              당시 부원들은 대회에서 좋은 성과를 내지 못할 것이라는 불안과 본인
+              역량에 대한 과소평가로 인해 참여를 주저하고 있었습니다.<br />
+              이를 해결하기 위해 지도 기사님과 부원들 간의 지도대국을 자주
+              진행하며, 부원들의 실력 향상과 자신감 회복을 이끌어냈습니다.<br />
+              그 결과, 이후 대회에서는 좋은 성적을 거둘 수 있었습니다.
+            </p>
+
+            <p>
+              또한 건설 현장 비계공으로 근무하면서 다양한 직군과 협력하여 업무를
+              수행한 경험을 통해,<br />
+              끈기와 책임감을 바탕으로 한 문제 해결 능력을 체득했습니다.<br />
+              힘든 환경 속에서도 맡은 바를 끝까지 완수하며 강한 실행력과
+              인내심을 기를 수 있었습니다.
+            </p>
+
+            <p>
+              이러한 소통 능력과 끈기를 바탕으로, 팀원들과 적극적으로
+              협력하며<br />
+              빠르게 변화하는 환경에서도 유연하게 대응할 수 있는 인재가
+              되겠습니다.
+            </p>
           </div>
         </div>
-      </div>
-      <div class="section-block">
-        <h3>자기소개</h3>
-        <hr />
-        <button class="toggle-btn" onclick="toggleSelfIntro()">[펼치기]</button>
-      
-        <div id="self-intro" class="hidden self-intro-box">
-          <p>
-            저는 서강대학교 컴퓨터공학과를 졸업하고 정보처리기사 자격증을 취득한 개발자입니다.<br />
-            학사 과정 중 모바일 백그라운드 보안 애플리케이션 개발을 수행했으며,<br />
-            기존 길찾기 앱에 최소환승과 세부 길안내 기능을 추가하는 앱 개발을 시도하여<br />
-            실질적인 문제 해결 능력을 키웠습니다.
-          </p>
-      
-          <p>
-            운영체제 프로젝트를 통해 프로그래밍 언어 및 시스템 구조에 대한 깊은 이해를 갖추었고,<br />
-            이를 바탕으로 새로운 언어를 빠르게 습득할 수 있는 기반을 마련했습니다.
-          </p>
-      
-          <p>
-            이후 K-Digital Training 과정을 통해 C, C++, JavaScript, Python, MySQL 등 다양한 기술을 추가로 학습하였고,<br />
-            프론트엔드와 백엔드를 모두 경험하는 Matchday 프로젝트(JSP 기반 웹사이트) 개발과 웹 호스팅을 직접 수행했습니다.<br />
-            또한, 404Error 프로젝트를 통해 Python 기반으로 공공데이터를 분석하고 시각화하는 경험을 쌓았습니다.
-          </p>
-      
-          <p>
-            이를 통해 웹 개발부터 데이터 분석까지 폭넓은 역량을 갖추게 되었으며,<br />
-            다양한 기술을 실제 프로젝트에 적용해본 실전 감각을 보유하고 있습니다.
-          </p>
-      
-          <p>
-            기술적 전문성과 다양한 경험을 바탕으로,<br />
-            입사 후 빠르게 적응하고 성장하여 미래가 기대되는 구성원이 되겠습니다.
-          </p>
-      
-          <p>
-            대학교 3학년 시절, 서강대학교 기우회 회장을 맡아 다양한 사람들과 소통하고 협력하며 조직을 운영하는 경험을 쌓았습니다.<br />
-            특히 부원들의 저조한 대회 참여율을 높이기 위해, 부원들의 애로사항을 경청하는 자세와 조율의 중요성을 깊이 깨달았습니다.<br />
-            당시 부원들은 대회에서 좋은 성과를 내지 못할 것이라는 불안과 본인 역량에 대한 과소평가로 인해 참여를 주저하고 있었습니다.<br />
-            이를 해결하기 위해 지도 기사님과 부원들 간의 지도대국을 자주 진행하며, 부원들의 실력 향상과 자신감 회복을 이끌어냈습니다.<br />
-            그 결과, 이후 대회에서는 좋은 성적을 거둘 수 있었습니다.
-          </p>
-      
-          <p>
-            또한 건설 현장 비계공으로 근무하면서 다양한 직군과 협력하여 업무를 수행한 경험을 통해,<br />
-            끈기와 책임감을 바탕으로 한 문제 해결 능력을 체득했습니다.<br />
-            힘든 환경 속에서도 맡은 바를 끝까지 완수하며 강한 실행력과 인내심을 기를 수 있었습니다.
-          </p>
-      
-          <p>
-            이러한 소통 능력과 끈기를 바탕으로, 팀원들과 적극적으로 협력하며<br />
-            빠르게 변화하는 환경에서도 유연하게 대응할 수 있는 인재가 되겠습니다.
-          </p>
-        </div>
-      </div>
-    </section>
-    
-    <section id="project-content" class="hidden"></section>
-  </div>
-  
-<!-- Click Home -->
-  <script>  
-    function goHome() {
-      window.location.hash = "about";
-      document.getElementById("project-content").classList.add("hidden");
-      document.getElementById("about").classList.remove("hidden");
-    }
+      </section>
 
-    function loadDynamicProjectContent() {
-      const hash = location.hash.replace("#", "");
-      const about = document.getElementById("about");
-      const content = document.getElementById("project-content");
+      <section id="project-content" class="hidden"></section>
+    </div>
 
-      if (!hash || hash === "about") {
-        about.classList.remove("hidden");
-        content.classList.add("hidden");
-        return;
+    <!-- Click Home -->
+    <script>
+      function goHome() {
+        window.location.hash = "about";
+        document.getElementById("project-content").classList.add("hidden");
+        document.getElementById("about").classList.remove("hidden");
       }
 
-      about.classList.add("hidden");
-      content.innerHTML = "";
-      content.classList.remove("hidden");
+      function loadDynamicProjectContent() {
+        const hash = location.hash.replace("#", "");
+        const about = document.getElementById("about");
+        const content = document.getElementById("project-content");
 
-      if (hash === "isyou") {
-        window.open("http://cscp2.sogang.ac.kr/CSE4187/index.php/ISYOU(Information_Security_for_YOU", "_blank");
-      } 
-      else if (hash === "save-time") {
-        window.open("http://cscp2.sogang.ac.kr/CSE4186/index.php/2018%EB%85%84_1%ED%95%99%EA%B8%B0_6%EC%A1%B0", "_blank");
-      }
-      else {
-        fetch(`projects/${hash}.html`)
-          .then(res => res.text())
-          .then(html => {
-            content.innerHTML = html;
-          })
-          .catch(() => {
-            content.innerHTML = "<p>프로젝트를 불러오지 못했습니다.</p>";
-          });
-      }
-    }
-
-    window.addEventListener("load", loadDynamicProjectContent);
-    window.addEventListener("DOMContentLoaded", loadDynamicProjectContent);
-    window.addEventListener("hashchange", loadDynamicProjectContent);
-    function toggleSelfIntro() {
-      const intro = document.getElementById("self-intro");
-      const button = document.querySelector(".toggle-btn");
-      const isHidden = intro.classList.contains("hidden");
-
-      if (isHidden) {
-        intro.classList.remove("hidden");
-        button.textContent = "[접기]";
-      } else {
-        intro.classList.add("hidden");
-        button.textContent = "[펼치기]";
-      }
-    }
-  </script>
-  
-<!-- today / total  -->
-  <script>
-    const today = new Date().toISOString().split('T')[0]; // 오늘 날짜 (YYYY-MM-DD)
-
-    async function updateVisitorStats() {
-      const totalDoc = db.collection('visitorStats').doc('total');
-      const todayDoc = db.collection('visitorStats').doc(today);
-
-      await db.runTransaction(async (transaction) => {
-        const totalSnap = await transaction.get(totalDoc);
-        const todaySnap = await transaction.get(todayDoc);
-
-        if (totalSnap.exists) {
-          transaction.update(totalDoc, { count: (totalSnap.data().count || 0) + 1 });
-        } else {
-          transaction.set(totalDoc, { count: 1 });
+        if (!hash || hash === "about") {
+          about.classList.remove("hidden");
+          content.classList.add("hidden");
+          return;
         }
 
-        if (todaySnap.exists) {
-          transaction.update(todayDoc, { count: (todaySnap.data().count || 0) + 1 });
+        about.classList.add("hidden");
+        content.innerHTML = "";
+        content.classList.remove("hidden");
+
+        if (hash === "isyou") {
+          window.open(
+            "http://cscp2.sogang.ac.kr/CSE4187/index.php/ISYOU(Information_Security_for_YOU",
+            "_blank"
+          );
+        } else if (hash === "save-time") {
+          window.open(
+            "http://cscp2.sogang.ac.kr/CSE4186/index.php/2018%EB%85%84_1%ED%95%99%EA%B8%B0_6%EC%A1%B0",
+            "_blank"
+          );
         } else {
-          transaction.set(todayDoc, { count: 1 });
+          fetch(`projects/${hash}.html`)
+            .then((res) => res.text())
+            .then((html) => {
+              content.innerHTML = html;
+            })
+            .catch(() => {
+              content.innerHTML = "<p>프로젝트를 불러오지 못했습니다.</p>";
+            });
         }
-      });
+      }
 
-      displayCounts();
-    }
+      window.addEventListener("load", loadDynamicProjectContent);
+      window.addEventListener("DOMContentLoaded", loadDynamicProjectContent);
+      window.addEventListener("hashchange", loadDynamicProjectContent);
+      function toggleSelfIntro() {
+        const intro = document.getElementById("self-intro");
+        const button = document.querySelector(".toggle-btn");
+        const isHidden = intro.classList.contains("hidden");
 
-    async function displayCounts() {
-      const totalDoc = await db.collection('visitorStats').doc('total').get();
-      const todayDoc = await db.collection('visitorStats').doc(today).get();
+        if (isHidden) {
+          intro.classList.remove("hidden");
+          button.textContent = "[접기]";
+        } else {
+          intro.classList.add("hidden");
+          button.textContent = "[펼치기]";
+        }
+      }
+    </script>
 
-      document.getElementById('totalCount').innerText = totalDoc.exists ? totalDoc.data().count : 0;
-      document.getElementById('todayCount').innerText = todayDoc.exists ? todayDoc.data().count : 0;
-    }
+    <!-- today / total  -->
+    <script>
+      const today = new Date().toISOString().split("T")[0]; // 오늘 날짜 (YYYY-MM-DD)
 
-    async function getVisitorCounts() {
-      const totalSnap = await db.collection('visitorStats').doc('total').get();
-      const todaySnap = await db.collection('visitorStats').doc(today).get();
+      async function updateVisitorStats() {
+        const totalDoc = db.collection("visitorStats").doc("total");
+        const todayDoc = db.collection("visitorStats").doc(today);
 
-      const total = totalSnap.exists ? totalSnap.data().count : 0;
-      const todayCount = todaySnap.exists ? todaySnap.data().count : 0;
+        await db.runTransaction(async (transaction) => {
+          const totalSnap = await transaction.get(totalDoc);
+          const todaySnap = await transaction.get(todayDoc);
 
-      console.log("오늘 방문자 수:", todayCount);
-      console.log("전체 방문자 수:", total);
-    }
+          if (totalSnap.exists) {
+            transaction.update(totalDoc, {
+              count: (totalSnap.data().count || 0) + 1,
+            });
+          } else {
+            transaction.set(totalDoc, { count: 1 });
+          }
 
-    updateVisitorStats();
+          if (todaySnap.exists) {
+            transaction.update(todayDoc, {
+              count: (todaySnap.data().count || 0) + 1,
+            });
+          } else {
+            transaction.set(todayDoc, { count: 1 });
+          }
+        });
 
-  </script>
-</body>
+        displayCounts();
+      }
+
+      async function displayCounts() {
+        const totalDoc = await db.collection("visitorStats").doc("total").get();
+        const todayDoc = await db.collection("visitorStats").doc(today).get();
+
+        document.getElementById("totalCount").innerText = totalDoc.exists
+          ? totalDoc.data().count
+          : 0;
+        document.getElementById("todayCount").innerText = todayDoc.exists
+          ? todayDoc.data().count
+          : 0;
+      }
+
+      async function getVisitorCounts() {
+        const totalSnap = await db
+          .collection("visitorStats")
+          .doc("total")
+          .get();
+        const todaySnap = await db.collection("visitorStats").doc(today).get();
+
+        const total = totalSnap.exists ? totalSnap.data().count : 0;
+        const todayCount = todaySnap.exists ? todaySnap.data().count : 0;
+
+        console.log("오늘 방문자 수:", todayCount);
+        console.log("전체 방문자 수:", total);
+      }
+
+      updateVisitorStats();
+    </script>
+  </body>
 </html>
